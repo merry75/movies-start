@@ -24,12 +24,15 @@
                 </div>
             </div>
             <div class="movies-container">
-                <li class="movie-container" ng-repeat="movie in movies track by $index">
+            
+                <movie-directive ng-repeat="movie in movies" movie="movie" remove="remove(movie)" is-deleting="isDeleting"  my-movie="movie"></movie-directive>
+            
+               <!--  <li class="movie-container" ng-repeat="movie in movies track by $index">
                     <div class="movie-item" ng-click="onMovieClicked()">
                         <div class="movie-image-container">
-                            <img class="movie-image" ng-src="{{movie.posterImage}}" alt="film image" ng-click="deleteMovie()" />
-                            <div ng-show="isDeleting" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" />
-                        </div>
+                            <img class="movie-image" ng-src="{{movie.posterImage}}" alt="film image" ng-click="remove(movie)" />
+                            <div ng-show="isDeleting" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon">
+                            </div>
                         <div class="movie-name">{{movie.name | uppercase}}</div>
                         <div class="movie-sub-info">
                             <div class="movie-year">{{movie.year}}</div>
@@ -38,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </div>
         </div>
     </div>
@@ -49,6 +52,7 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/movies/moviesService.js"></script>
     <script type="text/javascript" src="app/movies/moviesCtrl.js"></script>
+    <script type="text/javascript" src="app/movies/Components/component.js"></script>
 </body>
 
 </html>
